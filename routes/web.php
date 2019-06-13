@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * Gọi đến view welcome1
+ */
+Route::get("/abc", function() {
+    return view('welcome1');
+});
+
+Route::get("/abc1", function() {
+    return view('folder1.welcome2');
+});
+

@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('webmag.views.homepage.homepage');
+});
+
+Route::get('/category', function () {
+    return view('webmag.views.category.category');
 });
 
 /**

@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section("content")
 <!-- section -->
 <div class="section">
     <!-- container -->
@@ -531,3 +534,4 @@
     <!-- /container -->
 </div>
 <!-- /section -->
+@endsection

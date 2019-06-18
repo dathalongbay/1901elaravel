@@ -26,3 +26,7 @@ Route::get("/abc1", function() {
     return view('folder1.welcome2');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -15,7 +15,12 @@ Route::get('/', function () {
     return view('webmag.views.homepage.homepage');
 });
 
-Route::get('/category', function () {
+Route::get('/category/{id}/{abc}', function ($id, $abc) {
+
+    var_dump($id);
+    echo "<br>";
+    var_dump($abc);
+    exit;
     return view('webmag.views.category.category');
 });
 

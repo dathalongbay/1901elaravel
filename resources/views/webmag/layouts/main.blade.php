@@ -41,9 +41,9 @@
 <!-- /Footer -->
 
 <!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset("webmag/js/jquery.min.js") }}"></script>
+<script src="{{ asset("webmag/js/bootstrap.min.js") }}"></script>
+<script src="{{ asset("webmag/js/main.js") }}"></script>
 
 </body>
 </html>

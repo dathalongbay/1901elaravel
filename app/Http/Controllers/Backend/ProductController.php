@@ -43,8 +43,19 @@ class ProductController extends Controller
     }
 
 
-    public function store() {
+    public function store(Request $request) {
 
+        echo "<br>" . __METHOD__;
+
+        $inputs = $request->all();
+
+
+
+        echo "<pre>";
+        print_r($inputs);
+        echo "</pre>";
+
+        exit;
     }
 
 

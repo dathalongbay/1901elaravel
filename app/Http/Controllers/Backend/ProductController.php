@@ -11,19 +11,16 @@ class ProductController extends Controller
 
 
     public function index() {
-        echo "<br>" . __METHOD__;
 
         return view("admin.product.index");
     }
 
     public function create() {
-        echo "<br>" . __METHOD__;
 
         return view("admin.product.create");
     }
 
     public function edit($id) {
-        echo "<br>" . $id . __METHOD__;
 
         /**
          * Dữ liệu truyền xuống view
@@ -35,7 +32,6 @@ class ProductController extends Controller
     }
 
     public function delete($id) {
-        echo "<br>" . $id . __METHOD__;
 
         /**
          * Dữ liệu truyền xuống view

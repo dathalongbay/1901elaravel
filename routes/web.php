@@ -58,5 +58,17 @@ Route::prefix("admin")->group(function() {
     // view xoá
     Route::get("/products/delete/{id}", "Backend\ProductController@delete");
 
+    /**
+     * tạo 3 route để trực tiếp thêm , sửa , xoá
+     */
+
+    // thêm mới bản ghi
+    Route::post("/products", "Backend\ProductController@store");
+
+    // sửa sản phẩm
+    Route::post("/products/edit/{id}", "Backend\ProductController@update");
+
+    Route::post("/products/delete/{id}", "Backend\ProductController@destroy");
+
 
 });

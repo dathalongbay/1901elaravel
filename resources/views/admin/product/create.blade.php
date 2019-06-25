@@ -7,7 +7,7 @@
 @section("content")
 
     <div class="container">
-        <form name="product" method="post" action="">
+        <form name="product" method="post" action="{{ url("admin/products") }}">
             <div class="form-group">
                 <label>tên sản phẩm:</label>
                 <input type="text" class="form-control" name="product_name">

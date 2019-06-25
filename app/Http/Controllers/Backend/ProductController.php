@@ -43,4 +43,18 @@ class ProductController extends Controller
     }
 
 
+    public function store() {
+
+    }
+
+
+    public function update() {
+
+    }
+
+    public function destroy() {
+
+    }
+
+
 }

@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: T3H
- * Date: 6/25/2019
- * Time: 6:31 PM
- */
+@extends("admin.layouts.layout")
+
+@section("title")
+    Xoá sản phẩm
+@endsection
+
+@section("content")
+    Hiển thị form xoá sản phẩm {{ $id }}
+@endsection  

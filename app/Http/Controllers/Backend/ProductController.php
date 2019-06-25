@@ -47,6 +47,12 @@ class ProductController extends Controller
 
         echo "<br>" . __METHOD__;
 
+        $request->validate([
+            'product_name' => 'required|max:255|min:5',
+            'product_slug' => 'required',
+            'product_description' => 'numeric',
+        ]);
+
         $inputs = $request->all();
 
         $product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";

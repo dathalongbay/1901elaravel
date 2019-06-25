@@ -39,3 +39,24 @@ Route::get("/abc1", function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/**
+ * Route admin CRUD
+ */
+Route::prefix("admin")->group(function() {
+
+    // view liệt kê các bản ghi
+    Route::get("/products", "Backend\ProductController@index");
+
+    // view tạo mới
+    Route::get("/products/create", "Backend\ProductController@create");
+
+    // view sửa
+    Route::get("/products/edit/{id}", "Backend\ProductController@edit");
+
+    // view xoá
+    Route::get("/products/delete/{id}", "Backend\ProductController@delete");
+
+
+});

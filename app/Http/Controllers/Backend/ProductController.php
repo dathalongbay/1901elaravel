@@ -49,6 +49,11 @@ class ProductController extends Controller
 
         $inputs = $request->all();
 
+        $product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";
+        $product_slug = isset($inputs["product_slug"]) ? $inputs["product_slug"] : "";
+        $product_images = isset($inputs["product_images"]) ? $inputs["product_images"] : "";
+        $product_description = isset($inputs["product_description"]) ? $inputs["product_description"] : "";
+
 
 
         echo "<pre>";

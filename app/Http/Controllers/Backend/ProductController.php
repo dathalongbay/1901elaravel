@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+//use App\Models\Backend\ProductModel;
+use App\Models\Backend\ProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -50,23 +52,23 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required|max:255|min:5',
             'product_slug' => 'required',
-            'product_description' => 'numeric',
+            'product_description' => 'required',
         ]);
+
 
         $inputs = $request->all();
 
-        $product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";
-        $product_slug = isset($inputs["product_slug"]) ? $inputs["product_slug"] : "";
-        $product_images = isset($inputs["product_images"]) ? $inputs["product_images"] : "";
-        $product_description = isset($inputs["product_description"]) ? $inputs["product_description"] : "";
+        $productModel = new ProductModel();
 
+        $productModel->product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";
+        $productModel->product_slug = isset($inputs["product_slug"]) ? $inputs["product_slug"] : "";
+        $productModel->product_images = isset($inputs["product_images"]) ? $inputs["product_images"] : "";
+        $productModel->product_description = isset($inputs["product_description"]) ? $inputs["product_description"] : "";
 
+        $productModel->save();
 
-        echo "<pre>";
-        print_r($inputs);
-        echo "</pre>";
+        return redirect("/admin/products");
 
-        exit;
     }
 
 

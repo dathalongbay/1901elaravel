@@ -30,11 +30,14 @@ class ProductController extends Controller
 
     public function edit($id) {
 
+
+        $product = ProductModel::find($id);
+
         /**
          * Dữ liệu truyền xuống view
          */
         $data = array();
-        $data["id"] = $id;
+        $data["product"] = $product;
 
         return view("admin.product.edit", $data);
     }

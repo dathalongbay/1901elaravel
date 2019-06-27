@@ -6,33 +6,29 @@
 
 @section("content")
     <div class="container">
-        <h2>Danh sách sản phẩm</h2>
+        <h2>Danh sách sản phẩm {{ $abc }}</h2>
         <p><a href="{{ url("admin/products/create") }}" class="btn btn-success">Thêm sản phẩm</a> </p>
         <table class="table">
             <thead>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Hình ảnh</th>
             </tr>
             </thead>
             <tbody>
+
+            @foreach($products as $product)
             <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->product_name }}</td>
+                <td>{{ $product->product_images }}</td>
             </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+            @endforeach
+
             </tbody>
         </table>
+
+        {{ $products->links() }}
     </div>
 @endsection  

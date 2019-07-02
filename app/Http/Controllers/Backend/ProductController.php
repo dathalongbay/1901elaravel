@@ -16,6 +16,7 @@ class ProductController extends Controller
     public function index() {
         $products = DB::table('products')->paginate(1);
 
+
         $data = array();
         $data['products'] = $products;
         $data['abc'] = 12;
@@ -116,6 +117,18 @@ class ProductController extends Controller
 
 
     public function demo1() {
+
+        $products = DB::table('products')->get();
+
+        /**
+         * Data lấy từ query db và ORM trong laravel mặc định
+         * có kiểu data là collections
+         */
+
+        echo "<pre>";
+        print_r($products);
+        echo "</pre>";
+        exit;
 
         /**
          * Truyền dữ liệu biến xuống view

@@ -96,7 +96,6 @@ class ProductController extends Controller
 
         $productModel = ProductModel::find($id);
 
-
         $productModel->product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";
         $productModel->product_slug = isset($inputs["product_slug"]) ? $inputs["product_slug"] : "";
         $productModel->product_images = isset($inputs["product_images"]) ? $inputs["product_images"] : "";
@@ -113,6 +112,35 @@ class ProductController extends Controller
         DB::table('products')->where('id', '=', $id)->delete();
 
         return redirect("/admin/products");
+    }
+
+
+    public function demo1() {
+
+        /**
+         * Truyền dữ liệu biến xuống view
+         * Thường truyền xuống view 1 mảng
+         */
+        $data = array();
+        $data["author"] = "nguyễn văn tuấn";
+        $data["article"] = array("title" => "học css", "desc" => "học css");
+
+        /**
+         * Xuống view blade thì sẽ truy cập vào biến có tên là key trong mảng
+         * ví dụ như $author và $article
+         */
+
+        return view("admin.product.demo1", $data);
+    }
+
+
+    public function demo2() {
+        /**
+         * [] khai báo mảng trong php7
+         * array() khai báo mảng trong php5
+         */
+        return view("admin.product.demo1", ["author" => "nguyễn văn tuấn" ,
+            "article" => array("title" => "học css", "desc" => "học css")]);
     }
 
 

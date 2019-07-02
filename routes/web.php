@@ -48,6 +48,7 @@ Route::prefix("admin")->group(function() {
 
     // view liệt kê các bản ghi
     Route::get("/products", "Backend\ProductController@index");
+    Route::get("/products/demo1", "Backend\ProductController@demo1");
 
     // view tạo mới
     Route::get("/products/create", "Backend\ProductController@create");

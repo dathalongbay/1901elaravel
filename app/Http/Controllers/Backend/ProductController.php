@@ -50,6 +50,9 @@ class ProductController extends Controller
         $data = array();
         $data["id"] = $id;
 
+        $product = ProductModel::find($id);
+        $data["product"] = $product;
+
         return view("admin.product.delete", $data);
     }
 
@@ -93,6 +96,7 @@ class ProductController extends Controller
 
         $productModel = ProductModel::find($id);
 
+
         $productModel->product_name = isset($inputs["product_name"]) ? $inputs["product_name"] : "";
         $productModel->product_slug = isset($inputs["product_slug"]) ? $inputs["product_slug"] : "";
         $productModel->product_images = isset($inputs["product_images"]) ? $inputs["product_images"] : "";
@@ -104,8 +108,11 @@ class ProductController extends Controller
 
     }
 
-    public function destroy() {
+    public function destroy($id) {
 
+        DB::table('products')->where('id', '=', $id)->delete();
+
+        return redirect("/admin/products");
     }
 
 
